@@ -1,0 +1,8 @@
+networkx
+scipy
+pandas
+matplotlib
+minorminer
+amazon-braket-sdk
+dwave-ocean-sdk
+amazon-braket-ocean-plugin

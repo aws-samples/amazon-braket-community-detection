@@ -1,0 +1,9 @@
+# PyCharm stuff
+.idea
+
+# Code output/results
+output
+data
+.ipynb_checkpoints
+data/synthetic
+src/__pycache__
