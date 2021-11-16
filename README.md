@@ -1,6 +1,6 @@
 ## Community Detection in Complex Networks using Hybrid Quantum Annealing on Amazon Braket
 
-This code package is for solving network community detection problems using hybrid quantum annealing on Amazon Braket. 
+This code package is for solving network community detection problems using hybrid quantum annealing on Amazon Braket, seen in our [blog post](https://aws-blogs-prod.amazon.com/quantum-computing/community-detection-in-complex-networks-using-hybrid-quantum-annealing-on-amazon-braket-part-i/) for more details. 
 
 ### Quick Start
 
