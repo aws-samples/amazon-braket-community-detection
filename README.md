@@ -19,7 +19,7 @@ The tutorial notebook [`Notebook_QBSolv_community_detection`](Notebook_QBSolv_co
 
 The Amazon Braket Hybrid Jobs notebook [`Hybrid_jobs_for_community_detection`](Hybrid_jobs_for_community_detection.ipynb) provides a step-by-step guide on how to use Amazon Braket Hybrid Jobs to seamlessly manage and execute quantum annealing-based community detection tasks at scale. 
 
-**Table of Contents for the Amazon Braket Hybrid Job Notebook**
+**Table of Contents for the Amazon Braket Hybrid Jobs Notebook**
 * Set Up Environment
 * Prepare Input Data
 * Create an Algorithm Script
