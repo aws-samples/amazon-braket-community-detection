@@ -162,7 +162,7 @@ def draw_graph_community(nx_G, communities, comm_order=None, color_map='rainbow'
 
     if comm_order is None:
         # re-order communities based on the sum of node index for consistent coloring:
-        #  we may still have inconsistent coloring among results from different number of communities
+        # we may still have inconsistent coloring among results from different number of communities
         sum_nodes = [sum(i) for i in communities]
         comm_order = sorted(range(len(sum_nodes)), key=lambda k: sum_nodes[k])
     communities = [communities[i] for i in comm_order]
