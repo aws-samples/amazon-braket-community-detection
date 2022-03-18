@@ -19,7 +19,7 @@ from braket.ocean_plugin import BraketDWaveSampler
 from collections import defaultdict
 from networkx.algorithms import community
 
-from qubo_community import qubo_matrix_community_sparse, qbsolv_response_to_community
+from src.qubo_community import qubo_matrix_community_sparse, qbsolv_response_to_community
 
 
 def create_qubo_dict(nx_G, k, alpha=5):
@@ -94,19 +94,27 @@ class QbsolvCommunity(object):
         
         return comm_classical, response_classical
     
-    def solve_hybrid(self, num_comm, s3_folder, device_arn):
+    def solve_hybrid(self, num_comm, s3_folder, device_arn, ack_QPUcost=False):
         """
         Call QUBO hybrid solver for community detection
         
         :param num_comm: int, number of communities to solve for
         :param s3_folder: str, the Amazon Braket S3 path to store solver response files
-        :return: dict, two dictionaries for graph's community results and QBSolv reponse results
         :param device_arn: str, D-Wave QPU Device ARN (only needed for QBSolv Hybrid solver)
+        :param ack_QPUcost: bool, acknowledge QPU cost associated with the QBSolv Hybrid solver for price awareness
+        :return: dict, two dictionaries for graph's community results and QBSolv reponse results
         """
         q_dict = create_qubo_dict(self.graph, num_comm, self.alpha)
         self.qpu_cost_warning()
         
-        execution = input("Continue to execute QBSolv Hybrid job: Y or N?")
+        if ack_QPUcost:
+            execution = "y"
+        else:
+            try:
+                execution = input("Continue to execute QBSolv Hybrid job: Y or N?")
+            except EOFError as error:
+                print("\n WARNING: User didn't acknowledge QPU cost. Hybrid job execution is declined!")
+                raise error
         
         if execution.lower() in ["y", "yes"]:
             t0 = time.time()

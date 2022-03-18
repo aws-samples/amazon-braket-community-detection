@@ -1,35 +1,32 @@
 ## Community Detection in Complex Networks using Hybrid Quantum Annealing on Amazon Braket
 
-This code package is for solving network community detection problems using hybrid quantum annealing on Amazon Braket. For details, please check out our [blog post](https://aws.amazon.com/blogs/quantum-computing/community-detection-in-complex-networks-using-hybrid-quantum-annealing-on-amazon-braket-part-i/). 
+This code package is for solving network community detection problems using hybrid quantum annealing on Amazon Braket. 
 
 ### Quick Start
 
-The `Notebook_QBSolv_community_detection` notebook provides a step-by-step guide on how to formulate community detection as a Quadratic Unconstrained Binary Optimization (QUBO) problem, similar to the work done by [Negre et. al](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0227538). We then demonstrate how to use the open source QBSolv library, which provides quantum-classical hybrid solvers for QUBO problems, using a combination of classical compute resources and D-Wave quantum annealers, to solve community detection problems on Amazon Braket.
+The tutorial notebook [`Notebook_QBSolv_community_detection`](Notebook_QBSolv_community_detection.ipynb) provides a step-by-step guide on how to formulate community detection as a Quadratic Unconstrained Binary Optimization (QUBO) problem, similar to the work done by [Negre et. al](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0227538). We then demonstrate how to use the open source QBSolv library, which provides quantum-classical hybrid solvers for QUBO problems, using a combination of classical compute resources and D-Wave quantum annealers, to solve community detection problems on Amazon Braket.
 
-#### Table of Contents for the Tutorial Notebook
-* Modularity-based Community Detection
-* Community Detection as a QUBO Problem
-    * Two communities (k=2)
-    * Multiple communities
-        * One-Hot Encoding
-        * Generalized QUBO formulation
+**Table of Contents for the Tutorial Notebook**
+* Modularity-based community detection
+* Community detection as a QUBO problem
 * Datasets
-* List of Key Functions for Community Detection
-* Set Up Environment
-    * Helper Functions for Community Detection
-* Download Graph Data
-* Prepare Graph for Community Detection
-    * Built-In Graph
-    * Graph from a Local Data File
-    * Random Partition Graph
-* Apply QBSolv for Community Detection
-    * Set Community Parameters for a Graph
-    * Set Hyperparameters for QBSolv
-    * Execute QBSolv Classical Solver
-    * Execute QBSolv Hybrid Solver
-* Detect Communities for Synthetic and Real-World Graphs
-    * Study a Set of Synthetic Graphs
-    * Study a Set of Real-World Graphs
+* List of key functions for community detection
+* Set up environment
+* Download graph data
+* Prepare graph data for community detection
+* Apply QBSolv for community detection
+* Detect communities for synthetic and real-world networks
+
+The Amazon Braket Hybrid Jobs notebook [`Hybrid_jobs_for_community_detection`](Hybrid_jobs_for_community_detection.ipynb) provides a step-by-step guide on how to use Amazon Braket Hybrid Jobs to seamlessly manage and execute quantum annealing-based community detection tasks at scale. 
+
+**Table of Contents for the Amazon Braket Hybrid Jobs Notebook**
+* Set up environment
+* Prepare input data
+* Create an algorithm script
+* Specify hyperparameters
+* Submit a hybrid job
+* View results
+* Run hyperparameter tuning
 
 
 ### Datasets
